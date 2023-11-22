@@ -10,7 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_colorpicker: ^1.0.3
   google_fonts: ^6.1.0
+  intl: ^0.18.1
+  provider: ^6.1.1
+  uuid: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -22,6 +26,7 @@ flutter:
   assets:
     - assets/
     - assets/food_pics/
+    - assets/fooderlich_assets/
     - assets/magazine_pics/
     - assets/sample_data/
     - assets/profile_pics/
