@@ -29,9 +29,23 @@ class AppRouter {
       ),
 // TODO: Add Home Route
       GoRoute(
-        path: '/home',
-        builder: (BuildContext context, GoRouterState state) =>
-            Home(currentTab: appStateManager.getSelectedTab),
+        name: 'home',
+// 1
+        path: '/:tab',
+        builder: (context, state) {
+// 2
+          final tab = int.tryParse(state.pathParameters['tab'] ?? '') ?? 0;
+// 3
+          return Home(
+            key: state.pageKey,
+            currentTab: tab,
+          );
+        },
+// 3
+        routes: const [
+// TODO: Add Item Subroute
+// TODO: Add Profile Subroute
+        ],
       ),
     ],
     // TODO: Add Error Handler
