@@ -42,8 +42,31 @@ class AppRouter {
           );
         },
 // 3
-        routes: const [
+        routes: [
 // TODO: Add Item Subroute
+          GoRoute(
+            name: 'item',
+// 1
+            path: 'item/:id',
+            builder: (context, state) {
+// 2
+              final itemId = state.pathParameters['id'] ?? '';
+// 3
+              final item = groceryManager.getGroceryItem(itemId);
+// 4
+              return GroceryItemScreen(
+                originalItem: item,
+                onCreate: (item) {
+// 5
+                  groceryManager.addItem(item);
+                },
+                onUpdate: (item) {
+// 6
+                  groceryManager.updateItem(item);
+                },
+              );
+            },
+          ),
 // TODO: Add Profile Subroute
         ],
       ),
