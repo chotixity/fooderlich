@@ -35,6 +35,7 @@ class AppRouter {
         builder: (context, state) {
 // 2
           final tab = int.tryParse(state.pathParameters['tab'] ?? '') ?? 0;
+          print(tab);
 // 3
           return Home(
             key: state.pageKey,
